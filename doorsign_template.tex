@@ -1,0 +1,38 @@
+% Doorsign Template for TU Wien (state: 2025)
+% needs to be compiled with 'Xelatex' or 'LuaLatTeX' for the fonts
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=2cm]{geometry}
+\pagestyle{empty}		% remove page numbers/footers/headers
+\usepackage{tikz}		% for drawing lines
+\usepackage{fontspec}	% custom fonts
+\setmainfont{klavika}[
+	Path        = ./fonts/,
+	Extension   = .otf,
+	UprightFont = *-light,
+	BoldFont    = *-bold,
+]
+
+% -------- user-editable fields --------
+\newcommand{\PersonName} {SURNAME Name, Title}
+\newcommand{\JobTitle}   {Job Title}
+\newcommand{\extraLine}  {}
+% -------------------------------------
+
+\begin{document}
+	\vspace*{7cm}
+	
+	\Huge\noindent\textbf{\PersonName}\\
+	\Huge\JobTitle\\
+	\Huge\extraLine\\
+	
+	\vspace*{1cm}
+	
+	% cut lines
+	\begin{tikzpicture}[overlay,remember picture]
+		% horizontal line
+		\draw[dashed] (12cm,1cm) -- (12cm,13cm);
+		% vertical line
+		\draw[dashed] (0cm,1cm) -- (12cm,1cm);
+	\end{tikzpicture}
+\end{document}
