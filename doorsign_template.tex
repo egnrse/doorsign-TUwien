@@ -2,7 +2,7 @@
 % needs to be compiled with 'Xelatex' or 'LuaLatTeX' for the fonts
 
 \documentclass[a4paper,12pt]{article}
-\usepackage[margin=2cm]{geometry}
+\usepackage[margin=1.6cm]{geometry}
 \pagestyle{empty}		% remove page numbers/footers/headers
 \usepackage{tikz}		% for drawing lines
 \usepackage{fontspec}	% custom fonts
@@ -14,14 +14,17 @@
 ]
 
 % -------- user-editable fields --------
+\newcommand{\extraLineTop}{}
 \newcommand{\PersonName} {SURNAME Name, Title}
 \newcommand{\JobTitle}   {Job Title}
 \newcommand{\extraLine}  {}
 % -------------------------------------
 
 \begin{document}
-	\vspace*{7cm}
+	\vspace*{6cm}
 	
+	% text
+	\Huge\noindent\extraLineTop\\
 	\Huge\noindent\textbf{\PersonName}\\
 	\Huge\JobTitle\\
 	\Huge\extraLine\\
@@ -31,8 +34,8 @@
 	% cut lines
 	\begin{tikzpicture}[overlay,remember picture]
 		% horizontal line
-		\draw[dashed] (12cm,1cm) -- (12cm,13cm);
+		\draw[dashed] (12.4cm,1cm) -- (12.4cm,13cm);
 		% vertical line
-		\draw[dashed] (0cm,1cm) -- (12cm,1cm);
+		\draw[dashed] (0cm,1cm) -- (12.4cm,1cm);
 	\end{tikzpicture}
 \end{document}
